@@ -3,16 +3,16 @@ trigger:
 
 resources:
   repositories:
-  - repository: lovable-repo
+  - repository: lovable
     type: git
-    name: MyProject/lovable # Format is 'ProjectName/RepositoryName'
+    name: lovable
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
 - checkout: self          # Checks out the current pipeline repo
-- checkout: lovable-repo  # Checks out your "lovable" repo
+- checkout: lovable  # Checks out your "lovable" repo
 
 - bash: echo "Hello World"
   displayName: 'Run Hello World Script'
